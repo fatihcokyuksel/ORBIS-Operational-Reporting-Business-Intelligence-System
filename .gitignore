@@ -57,6 +57,10 @@ outputs/
 backend/storage/
 backend/outputs/
 
+# keep the shipped Chroma database in version control
+!chroma_local_kanun_db/
+!chroma_local_kanun_db/**
+
 # python
 venv/
 .venv/
