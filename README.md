@@ -596,3 +596,6 @@ Yeni PDF eklemek için:
 ## Lisans / Not
 
 Bu README, projeyi hem son kullanıcı hem jüri hem de geliştirici gözüyle anlaşılır kılmak amacıyla hazırlanmıştır. İstenirse bir sonraki adımda buna ekran görüntüsü bölümü, API endpoint tablosu ve demo akış diyagramı da eklenebilir.
+
+Kısa not:
+[Ornek_Cıktılar](./Ornek_Cıktılar/) klasöründen örnek çıktılara bakabilirsiniz. Sistemi test etmek için [sample_input_data_for_report_generation](./sample_input_data_for_report_generation/) klasöründeki verileri kullanabilirsiniz.
