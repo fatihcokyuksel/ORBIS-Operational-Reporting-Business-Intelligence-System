@@ -1,0 +1,38 @@
+{
+  "report_id": "income_expense_report",
+  "display_name": "Gelir Gider Raporu",
+  "category": "report",
+  "description": "Gelir, gider, net kar ve operasyonel metrikleri üretir.",
+  "family": "transaction",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "transactions",
+    "required_fields": ["date", "amount", "description", "direction"],
+    "optional_fields": ["balance", "counterparty", "category", "currency", "source"],
+    "accepted_directions": ["income", "expense", "inflow", "outflow"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "internal_output_kinds": ["png"],
+  "template_version": "2.0",
+  "handler_class": "report_handlers.income_expense_handler.IncomeExpenseReportHandler",
+  "alternative_reports": ["cash_flow_report"],
+  "output_config": {
+    "overview_title": "Gelir Gider Raporu",
+    "overview_sheet_name": "Ana Rapor",
+    "charts_sheet_name": "Grafikler",
+    "data_sheet_name": "Normalize Veri",
+    "summary_sheet_name": "Kısa Özet",
+    "main_summary_keys": ["income_total", "expense_total", "net_profit"],
+    "compact_summary_keys": ["income_total", "expense_total", "net_profit", "profit_margin"],
+    "metrics": [
+      {"key": "income_total", "label": "Toplam Gelir", "type": "currency", "style": "positive"},
+      {"key": "expense_total", "label": "Toplam Gider", "type": "currency", "style": "negative"},
+      {"key": "net_profit", "label": "Net Kar", "type": "currency", "style": "neutral_by_sign"},
+      {"key": "profit_margin", "label": "Kar Marjı", "type": "percentage", "style": "neutral"},
+      {"key": "transaction_count", "label": "İşlem Adedi", "type": "count", "style": "count"},
+      {"key": "average_transaction_amount", "label": "Ortalama İşlem Tutarı", "type": "currency", "style": "neutral"},
+      {"key": "largest_income", "label": "En Büyük Gelir", "type": "currency", "style": "positive"},
+      {"key": "largest_expense", "label": "En Büyük Gider", "type": "currency", "style": "negative"}
+    ]
+  }
+}

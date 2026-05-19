@@ -1,0 +1,19 @@
+{
+  "report_id": "tax_calculation_report",
+  "display_name": "Vergi Hesaplama Raporu",
+  "category": "report",
+  "description": "Vergi türü ve dönem bazlı matrah ve vergi tutarı analizi üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "tax_type", "base_amount", "tax_rate"],
+    "optional_fields": ["tax_amount", "invoice_no", "counterparty", "period", "transaction_type", "description", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["base_amount", "tax_rate", "tax_amount"],
+    "date_fields": ["date"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.tax_calculation_report.ReportAgent",
+  "alternative_reports": ["vat_summary_report"]
+}

@@ -1,0 +1,37 @@
+{
+  "report_id": "cash_flow_report",
+  "display_name": "Nakit Akış Raporu",
+  "category": "report",
+  "description": "Tarih bazlı net ve kümülatif nakit akışı metrikleri üretir.",
+  "family": "transaction",
+  "supported_inputs": ["excel"],
+  "input_contract": {
+    "model_type": "transactions",
+    "required_fields": ["date", "amount", "description", "direction"],
+    "optional_fields": ["balance", "counterparty", "category", "currency", "source"],
+    "accepted_directions": ["income", "expense", "inflow", "outflow"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "internal_output_kinds": ["png"],
+  "template_version": "2.0",
+  "handler_class": "report_handlers.cash_flow_handler.CashFlowReportHandler",
+  "alternative_reports": ["income_expense_report"],
+  "output_config": {
+    "overview_title": "Nakit Akış Raporu",
+    "overview_sheet_name": "Ana Rapor",
+    "charts_sheet_name": "Grafikler",
+    "data_sheet_name": "Normalize Veri",
+    "summary_sheet_name": "Kısa Özet",
+    "main_summary_keys": ["cash_in_total", "cash_out_total", "net_cash_flow"],
+    "compact_summary_keys": ["cash_in_total", "cash_out_total", "net_cash_flow", "transaction_count"],
+    "metrics": [
+      {"key": "cash_in_total", "label": "Nakit Girişi", "type": "currency", "style": "positive"},
+      {"key": "cash_out_total", "label": "Nakit Çıkışı", "type": "currency", "style": "negative"},
+      {"key": "net_cash_flow", "label": "Net Nakit Akışı", "type": "currency", "style": "neutral_by_sign"},
+      {"key": "transaction_count", "label": "İşlem Adedi", "type": "count", "style": "count"},
+      {"key": "average_transaction_amount", "label": "Ortalama İşlem Tutarı", "type": "currency", "style": "neutral"},
+      {"key": "largest_cash_in", "label": "En Büyük Nakit Girişi", "type": "currency", "style": "positive"},
+      {"key": "largest_cash_out", "label": "En Büyük Nakit Çıkışı", "type": "currency", "style": "negative"}
+    ]
+  }
+}

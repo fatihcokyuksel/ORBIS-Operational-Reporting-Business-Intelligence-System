@@ -1,0 +1,19 @@
+{
+  "report_id": "vat_summary_report",
+  "display_name": "KDV Özet Raporu",
+  "category": "report",
+  "description": "KDV oran bazlı satış/alış matrahı ve net KDV özetini üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "base_amount", "tax_rate", "transaction_type"],
+    "optional_fields": ["tax_amount", "invoice_no", "counterparty", "product_name", "description", "currency", "total_amount", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["base_amount", "tax_rate", "tax_amount", "total_amount"],
+    "date_fields": ["date"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.vat_summary_report.ReportAgent",
+  "alternative_reports": ["tax_calculation_report"]
+}

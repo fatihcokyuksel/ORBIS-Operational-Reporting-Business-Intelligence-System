@@ -1,0 +1,20 @@
+{
+  "report_id": "profitability_report",
+  "display_name": "Nakit Bazlı Karlılık Raporu",
+  "category": "report",
+  "description": "Gelir, gider, net kar ve aylık karlılık özetini üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "amount", "direction"],
+    "optional_fields": ["category", "description", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["amount"],
+    "date_fields": ["date"],
+    "accepted_directions": ["income", "expense"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.profitability_report.ReportAgent",
+  "alternative_reports": ["income_expense_report"]
+}

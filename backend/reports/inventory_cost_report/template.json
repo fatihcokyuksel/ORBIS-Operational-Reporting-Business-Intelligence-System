@@ -1,0 +1,19 @@
+{
+  "report_id": "inventory_cost_report",
+  "display_name": "Stok Maliyet Raporu",
+  "category": "report",
+  "description": "Stok giriş-çıkış, kalan stok ve stok değeri özetini üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "quantity", "transaction_type"],
+    "optional_fields": ["unit_cost", "product_code", "product_name", "warehouse", "supplier", "sales_price", "product_category", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["quantity", "unit_cost", "sales_price"],
+    "date_fields": ["date"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.inventory_cost_report.ReportAgent",
+  "alternative_reports": ["sales_performance_report"]
+}

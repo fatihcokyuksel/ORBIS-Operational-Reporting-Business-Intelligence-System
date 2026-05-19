@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+requests
+python-dotenv
+bcrypt
+pandas
+openpyxl
+xlsxwriter
+matplotlib
+google-genai
+pydantic
+reportlab
+chromadb
+FlagEmbedding

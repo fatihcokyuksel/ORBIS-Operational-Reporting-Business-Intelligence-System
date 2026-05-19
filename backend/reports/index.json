@@ -1,0 +1,48 @@
+{
+  "reports": [
+    {
+      "report_id": "income_expense_report",
+      "template_path": "reports/income_expense_report/template.json"
+    },
+    {
+      "report_id": "cash_flow_report",
+      "template_path": "reports/cash_flow_report/template.json"
+    },
+    {
+      "report_id": "debt_receivable_report",
+      "template_path": "reports/debt_receivable_report/template.json"
+    },
+    {
+      "report_id": "vat_summary_report",
+      "template_path": "reports/vat_summary_report/template.json"
+    },
+    {
+      "report_id": "personnel_expense_report",
+      "template_path": "reports/personnel_expense_report/template.json"
+    },
+    {
+      "report_id": "sales_performance_report",
+      "template_path": "reports/sales_performance_report/template.json"
+    },
+    {
+      "report_id": "profitability_report",
+      "template_path": "reports/profitability_report/template.json"
+    },
+    {
+      "report_id": "current_account_report",
+      "template_path": "reports/current_account_report/template.json"
+    },
+    {
+      "report_id": "payroll_cost_report",
+      "template_path": "reports/payroll_cost_report/template.json"
+    },
+    {
+      "report_id": "inventory_cost_report",
+      "template_path": "reports/inventory_cost_report/template.json"
+    },
+    {
+      "report_id": "tax_calculation_report",
+      "template_path": "reports/tax_calculation_report/template.json"
+    }
+  ]
+}

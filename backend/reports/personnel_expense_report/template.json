@@ -1,0 +1,19 @@
+{
+  "report_id": "personnel_expense_report",
+  "display_name": "Personel Gider Analiz Raporu",
+  "category": "report",
+  "description": "Departman ve ay bazında personel maliyetlerini analiz eder.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "employee_name", "department", "gross_salary"],
+    "optional_fields": ["bonus", "benefits", "employer_cost", "employer_extra_cost", "total_employer_cost", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["gross_salary", "bonus", "benefits", "employer_cost", "employer_extra_cost", "total_employer_cost"],
+    "date_fields": ["date"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.personnel_expense_report.ReportAgent",
+  "alternative_reports": ["payroll_cost_report"]
+}

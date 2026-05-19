@@ -1,0 +1,20 @@
+{
+  "report_id": "current_account_report",
+  "display_name": "Cari Hesap Takip Raporu",
+  "category": "report",
+  "description": "Cari bakiye, açık tutar ve yaşlandırma analizi üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "counterparty", "amount", "transaction_direction"],
+    "optional_fields": ["counterparty_type", "due_date", "payment_status", "description", "invoice_no", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["amount"],
+    "date_fields": ["date", "due_date"],
+    "accepted_directions": ["debt", "receivable"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.current_account_report.ReportAgent",
+  "alternative_reports": ["debt_receivable_report"]
+}

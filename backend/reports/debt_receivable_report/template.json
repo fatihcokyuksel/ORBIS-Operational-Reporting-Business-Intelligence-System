@@ -1,0 +1,20 @@
+{
+  "report_id": "debt_receivable_report",
+  "display_name": "Borç-Alacak Raporu",
+  "category": "report",
+  "description": "Cari bazlı toplam borç, toplam alacak, risk ve vade takibi üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "counterparty", "amount", "direction"],
+    "optional_fields": ["counterparty_type", "description", "due_date", "invoice_no", "payment_status", "currency", "debt_amount", "receivable_amount", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["amount", "debt_amount", "receivable_amount"],
+    "date_fields": ["date", "due_date"],
+    "accepted_directions": ["debt", "receivable"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.debt_receivable_report.ReportAgent",
+  "alternative_reports": ["current_account_report"]
+}

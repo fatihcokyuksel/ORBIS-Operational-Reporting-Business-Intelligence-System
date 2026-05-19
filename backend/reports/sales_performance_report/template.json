@@ -1,0 +1,19 @@
+{
+  "report_id": "sales_performance_report",
+  "display_name": "Satış Performans Raporu",
+  "category": "report",
+  "description": "Ürün, müşteri ve ay bazlı satış performansı üretir.",
+  "family": "structured_financial",
+  "supported_inputs": ["excel", "prompt"],
+  "input_contract": {
+    "model_type": "records",
+    "required_fields": ["date", "product_name", "customer"],
+    "optional_fields": ["quantity", "unit_price", "discount", "salesperson", "region", "total_sales", "counterparty", "transaction_type", "return_status", "currency", "timezone", "transaction_id", "reference_no"],
+    "numeric_fields": ["quantity", "unit_price", "discount", "total_sales"],
+    "date_fields": ["date"]
+  },
+  "output_kinds": ["json", "xlsx"],
+  "template_version": "1.0",
+  "handler_class": "reports.sales_performance_report.ReportAgent",
+  "alternative_reports": ["profitability_report"]
+}
