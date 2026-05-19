@@ -10,6 +10,8 @@ Projenin temel amacı şudur:
 
 Kısacası ORBIS, bir yandan RAG destekli hukuk/mevzuat asistanı, diğer yandan finansal karar destek ve raporlama platformu olarak tasarlanmıştır.
 
+Projenin demo videosuna [buraya tıklayarak](https://www.youtube.com/watch?v=3CY1ZkRGy3o) erişebilirsiniz.
+
 ---
 
 ## İçindekiler
